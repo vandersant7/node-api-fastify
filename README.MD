@@ -1,5 +1,3 @@
-Claro, aqui está o README.md com o código fornecido:
-
 # Projeto Node WebApi da Fórmula 1 utilizando framework Fastify
 
 Este é um projeto de uma API da Fórmula 1 desenvolvida com o framework Fastify em Node.js.
