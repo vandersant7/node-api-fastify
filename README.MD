@@ -1,81 +1,86 @@
-<div align="center">
+Claro, aqui está o README.md com o código fornecido:
 
-  <img src="./.github/assets/blue-saiyan-bg.png" alt="Logo" height="200">
-  <h1 align="center"><strong>NODE BOILERPLATE - BLUE EDITION</strong></h1>
-  <p align="center">
-	  Don't start a new Node project from zero!<br> Use this simple <b>Nodejs</b> boilerplate with pre-configured <b>Typescript</b> in a modern way.
-  </p>
+# Projeto Node WebApi da Fórmula 1 utilizando framework Fastify
 
-</div>
+Este é um projeto de uma API da Fórmula 1 desenvolvida com o framework Fastify em Node.js.
 
-<br />
+## Código
 
-  <!-- Badges -->
-<div align="center">
-  
-  [![TypeScript version][ts-badge]][typescript-5-4]
-  [![Node.js version][nodejs-badge]][nodejs]
+```javascript
+const server = Fastify({ logger: true })
 
-</div>
+server.register(cors, {
+    origin: '*',
+})
 
-# 🚀 Technologies
+const teams = [
+  { id: 1, name: 'McLaren', base: 'Woking, United Kingdom' },
+  { id: 2, name: 'Mercedes', base: 'Brackley, United Kingdom' },
+  { id: 3, name: 'Red Bull Racing', base: 'Milton Keynes, United Kingdom' },
+  { id: 4, name: 'Ferrari', base: 'Maranello, Italy' },
+  { id: 5, name: 'Alpine', base: 'Enstone, United Kingdom' },
+  { id: 6, name: 'AlphaTauri', base: 'Faenza, Italy' },
+  { id: 7, name: 'Aston Martin', base: 'Silverstone, United Kingdom' },
+  { id: 8, name: 'Haas', base: 'Kannapolis, United States' },
+  { id: 9, name: 'Alfa Romeo', base: 'Hinwil, Switzerland' },
+  { id: 10, name: 'Williams', base: 'Grove, United Kingdom' },
+]
 
-This code source was developed with the following items:
-
-### 📦 Dependencies
-
-- [typescript][typescript-npm] - Superset for application scale JavaScript development
-- [tsx][tsx-npm] - TypeScript Execute (tsx): Enable Node.js to run TypeScript
-- [tsup][tsup-npm] - Bundle your TypeScript library with no config, powered by esbuild
-- [@types/node][@types/node-npm] - type definitions for node
-
-### 📄 Files
-
-- `.gitignore` - Ignore folders like node_modules
-- `.env` - Enviroment variables
-- `tsconfig.json` - Typescript configure Options
-
-### ⚡ Scripts
-
-- `npm run dist`: Compiles TypeScript files to JavaScript in the dist directory.
-- `npm run start:dev`: Runs the server in development mode with environment variables loaded from the .env file.
-- `npm run start:watch`: Runs the server in development mode with support for automatic reload on file changes.
-- `npm run start:dist`: Compiles the project and runs the compiled version from the dist directory.
-
-# 👨‍💻 How To Use
-
-click in **[Use this template]** OR
-
-To clone and run this application, you'll need [Git](https://git-scm.com), [Node.js v20+](https://nodejs.org/en/) + [NPM v10+](https://nodejs.org/en/) installed on your computer. From your command line:
-
-```bash
-# Clone this repository
-$ git clone https://github.com/felipeAguiarCode/node-blue-boilerplate
-
-# Go into the repository
-$ cd node-blue-boilerplate
-
-# Install dependencies
-$ npm install
+const drivers = [
+  { id: 1, name: 'Max Verstappen', team: 'Red Bull Racing' },
+  { id: 2, name: 'Lewis Hamilton', team: 'Mercedes' },
+  { id: 3, name: 'Lando Norris', team: 'McLaren' },
+  { id: 4, name: 'Charles Leclerc', team: 'Ferrari' },
+  { id: 5, name: 'Sergio Pérez', team: 'Red Bull Racing' },
+  { id: 6, name: 'Carlos Sainz', team: 'Ferrari' },
+  { id: 7, name: 'George Russell', team: 'Mercedes' },
+  { id: 8, name: 'Daniel Ricciardo', team: 'McLaren' },
+  { id: 9, name: 'Valtteri Bottas', team: 'Alfa Romeo' },
+  { id: 10, name: 'Esteban Ocon', team: 'Alpine' },
+  { id: 11, name: 'Fernando Alonso', team: 'Alpine' },
+  { id: 12, name: 'Pierre Gasly', team: 'AlphaTauri' },
+  { id: 13, name: 'Yuki Tsunoda', team: 'AlphaTauri' },
+  { id: 14, name: 'Kevin Magnussen', team: 'Haas' },
+  { id: 15, name: 'Mick Schumacher', team: 'Haas' },
+  { id: 16, name: 'Zhou Guanyu', team: 'Alfa Romeo' },
+  { id: 17, name: 'Alexander Albon', team: 'Williams' },
+  { id: 18, name: 'Nicholas Latifi', team: 'Williams' },
+]
 ```
 
-## Author
+Este código define uma API da Fórmula 1 utilizando o framework Fastify. Ele inclui duas listas de dados: uma com as equipes da Fórmula 1 e outra com os pilotos.
 
-| [<img src="https://avatars3.githubusercontent.com/u/37452836?s=96&v=4"><br><sub>Felipe Aguiar</sub>](https://github.com/felipeAguiarCode) |
-| :---------------------------------------------------------------------------------------------------------------------------------------: |
-|                                            [Linkedin](www.linkedin.com/in/felipe-aguiar-exe/)                                             |
+## Como usar essa API
 
-# Credits
+Para utilizar essa API, siga os seguintes passos:
 
-icons by [Pino Lamanna][dribble-icon]
+1. Instale as dependências do projeto:
+```
+npm install
+```
 
-[typescript]: https://www.typescriptlang.org/
-[typescript-5-4]: https://www.typescriptlang.org/
-[ts-badge]: https://img.shields.io/badge/TypeScript-5.4-blue.svg
-[nodejs-badge]: https://img.shields.io/badge/Node.js->=%2020.00-blue.svg
-[nodejs]: https://nodejs.org/
-[dribble-icon]: https://dribbble.com/Schakalwal
-[typescript-npm]: https://www.npmjs.com/package/typescript
-[tsx-npm]: https://www.npmjs.com/package/tsx
-[tsup-npm]: https://www.npmjs.com/package/tsup
-[@types/node-npm]: https://www.npmjs.com/package/@types/node
+2. Inicie o servidor de desenvolvimento:
+```
+npm run start:dev
+```
+
+Isso irá iniciar o servidor Fastify em modo de desenvolvimento, com suporte a hot reload.
+
+3. Acesse a API em `http://localhost:3333`
+- Endpoints:
+  ```
+  /teams
+  /drivers
+  ```
+
+## Tecnologias utilizadas
+
+Este projeto utiliza as seguintes tecnologias:
+
+- **Fastify**: Um framework web rápido e eficiente para Node.js, que foi usado para criar a API.
+- **Typescript**: Uma linguagem de programação superset do JavaScript, que adiciona tipagem estática ao código.
+- **TSUp**: Uma ferramenta de empacotamento e compilação de código Typescript.
+- **tsx**: Uma ferramenta de execução de scripts Typescript, que permite usar o Typescript diretamente no Node.js.
+- **@fastify/cors**: Um plugin Fastify para habilitar o CORS (Cross-Origin Resource Sharing).
+
+Essas tecnologias foram escolhidas para fornecer uma base sólida e escalável para o desenvolvimento da API da Fórmula 1.
